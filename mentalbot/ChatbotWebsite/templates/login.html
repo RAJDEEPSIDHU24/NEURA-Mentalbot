@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+  #home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+  }
+
+  .login-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #login-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form-container {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .form-check {
+    margin-bottom: 1.2rem;
+  }
+
+  .login-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+
+  .register-link,
+  .forgot-password-link {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .register-link:hover,
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+
+  .links-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .signup-container {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+</style>
+<div id="home-container">
+  <div class="login-image-container d-none d-md-block">
+    <img
+      src="{{ url_for('static', filename='images/login.jpg') }}"
+      id="login-image"
+      class="img-fluid rounded-start my-4"
+      alt="Login Image"
+    />
+  </div>
+  <div class="login-form-container">
+    <h2 class="login-title">Log In</h2>
+    <form method="POST" action="{{ url_for('users.login') }}">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control", placeholder="Enter your email") }}
+        {% if form.email.errors %}
+          {% for error in form.email.errors %}
+            <small class="form-text text-danger">{{ error }}</small>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        {% if form.password.errors %}
+          {% for error in form.password.errors %}
+            <small class="form-text text-danger">{{ error }}</small>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="form-check">
+        {{ form.remember_me(class="form-check-input") }}
+        {{ form.remember_me.label(class="form-check-label") }}
+      </div>
+      {{ form.submit(class="login-button") }}
+      <div class="links-container">
+        <a class="forgot-password-link" href="{{ url_for('users.reset_request') }}">Forgot Password?</a>
+      </div>
+    </form>
+    <div class="signup-container">
+      <small class="text-muted">
+        Need an Account?
+        <a class="register-link" href="{{ url_for('users.register') }}">Sign Up</a>
+      </small>
+    </div>
+  </div>
+</div>
+{% endblock content %}

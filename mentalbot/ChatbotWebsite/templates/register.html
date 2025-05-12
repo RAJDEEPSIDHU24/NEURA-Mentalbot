@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-sm px-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend
+            class="fs-2 fw-bold font-monospace border-bottom border-info mb-4 mt-2"
+          >
+            Register
+          </legend>
+          <div class="form-group mb-3">
+            {{ form.username.label(class="form-control-label") }}
+            {% if form.username.errors %}
+            {{ form.username(class="form-control form-control-lg is-invalid") }}
+            {% for error in form.username.errors %}
+            <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+            {% else %}
+            {{ form.username(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group mb-3">
+            {{ form.email.label(class="form-control-label") }}
+            {% if form.email.errors %}
+            {{ form.email(class="form-control form-control-lg is-invalid") }}
+            {% for error in form.email.errors %}
+            <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+            {% else %}
+            {{ form.email(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group mb-3">
+            {{ form.password.label(class="form-control-label") }}
+            {% if form.password.errors %}
+            {{ form.password(class="form-control form-control-lg is-invalid") }}
+            {% for error in form.password.errors %}
+            <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+            {% else %}
+            {{ form.password(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group mb-3">
+            {{ form.confirm_password.label(class="form-control-label") }}
+            {% if form.confirm_password.errors %}
+            {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+            {% for error in form.confirm_password.errors %}
+            <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+            {% else %}
+            {{ form.confirm_password(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+        </fieldset>
+        <div class="form-group mt-4">
+          {{ form.submit(class="btn btn-primary btn-lg w-100") }}
+        </div>
+      </form>
+      <div class="text-center mt-4"><small class="text-muted"
+          >Already Have an Account?
+          <a class="text-blue-500 hover:text-blue-700 text-decoration-none" href="{{ url_for('users.login') }}"
+            >Sign In</a
+          ></small
+        >
+      </div>
+    </div>
+    <div class="col-md-4 d-none d-md-block">
+      <img
+        src="{{ url_for('static', filename='images/register.jpg') }}"
+        id="register-image"
+        class="img-fluid rounded-start my-4"
+      />
+    </div>
+  </div>
+</div>
+{% endblock content %}

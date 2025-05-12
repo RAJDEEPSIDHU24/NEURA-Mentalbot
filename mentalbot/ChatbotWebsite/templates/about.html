@@ -1,0 +1,179 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+  /* Modern Classic Playful Typography & Improved Layout */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Lato', sans-serif; /* Modern, readable body text */
+    color: #4a4a4a; /* Darker, more sophisticated text color */
+  }
+
+  .container-fluid.bg-light {
+    background-color: #f8f9fa !important; /* Very light gray background */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #about-us-title {
+    font-family: 'Playfair Display', serif; /* Classic, elegant title font */
+    color: #377ba8; /* A more refined blue */
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #a6c0cd; /* Softer border color */
+  }
+
+  .container.py-4 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .row.align-items-center {
+    margin-bottom: 3rem; /* Add spacing between the image/text sections */
+  }
+
+  .col:first-child { /* Style the image column */
+    text-align: center;
+  }
+
+  .rounded-circle {
+    border: 6px solid #8ac4ff !important; /* More playful blue border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .rounded-circle:hover {
+    transform: scale(1.05);
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #5e5e5e;
+    margin-bottom: 2rem;
+  }
+
+  hr.border-primary {
+    border-top: 2px dotted #b0e0e6 !important; /* Playful dotted line */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .text-secondary {
+    color: #6c757d !important;
+    line-height: 1.7;
+  }
+
+  .text-danger strong {
+    color: #dc3545 !important;
+    font-weight: 700;
+  }
+
+  .text-info strong {
+    color: #17a2b8 !important;
+    font-weight: 700;
+  }
+
+  .card {
+    border: 1px solid #dee2e6; /* Light border for definition */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .card-body {
+    padding: 2rem;
+    text-align: left; /* Align text within cards to the left for better readability */
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif; /* Elegant titles for sections */
+    color: #28a745; /* Success color for Mission */
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-title.text-primary {
+    color: #007bff !important; /* Primary color for Team (if you want to differentiate) */
+  }
+</style>
+<div class="container-fluid bg-light py-5">
+  <h1 id="about-us-title">About Us</h1>
+  <div class="container py-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4 align-items-center">
+      <div class="col">
+        <img
+          src="{{ url_for('static', filename='images/chatbot.png') }}"
+          alt="Mental Health Chatbot Picture"
+          class="rounded-circle border border-primary mx-auto mb-4 d-block shadow-lg"
+          style="width: 20rem; height: 20rem; object-fit: cover;"
+        />
+      </div>
+      <div class="col">
+        <p class="lead">
+          Welcome to our mental health chatbot! This chatbot is designed to provide
+          reliable information and resources to help individuals improve their
+          mental health and wellbeing.
+        </p>
+        <hr class="border-primary my-4">
+        <p class="text-secondary">
+          We understand that seeking help for mental health concerns can be
+          challenging, and our chatbot aims to make the process as comfortable
+          and accessible as possible.
+        </p>
+        <hr class="border-primary my-4">
+        <p class="text-secondary">
+          <strong class="text-danger">Important:</strong> Please remember that our chatbot is
+          not a substitute for professional help. If you are experiencing a mental
+          health crisis, please seek help from a qualified mental health professional.
+        </p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title text-success mb-3">Our Mission</h2>
+            <p class="card-text text-secondary">
+              We believe that education and awareness are critical components of
+              mental health. Our chatbot aims to provide accurate and up-to-date
+              information on various mental health conditions, including symptoms,
+              causes, and effects. We also provide a variety of resources, such as
+              mental health tests and exercises, to help you evaluate your mental
+              health and improve your overall wellbeing.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title text-primary mb-3">Our Team</h2>
+            <p class="card-text text-secondary">
+              This chatbot was developed by CSE students (Rajdeep & Mehak) who are
+              passionate about mental health. The developers are committed to playing
+              a part in breaking down the stigma surrounding mental health and
+              creating a supportive community for individuals seeking help. Thank
+              you for choosing our mental health chatbot as your first step towards
+              a healthier and happier life! We are here to support you every step
+              of the way.<br>
+              Contact the developer <strong class="text-info">(rajdeepsidhu642@gmail.com &Mehakdeepkaur2705@gmail.com)</strong>
+              if you have any questions or feedback.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
