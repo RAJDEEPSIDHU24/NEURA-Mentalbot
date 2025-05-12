@@ -1,3 +1,4 @@
 **/__pycache__
 chatbot-model.h5
 data.pickle
+tfenv/
