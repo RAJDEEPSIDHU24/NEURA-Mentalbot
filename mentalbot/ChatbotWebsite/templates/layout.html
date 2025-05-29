@@ -17,40 +17,40 @@
         /* Navbar Styles */
         #navigation-bar {
             padding: 0.5rem 0;
-            background-color: #f0f4f5; /* Light background for navbar */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #f0f4f5; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         #navigation-bar .navbar-brand {
             margin-right: 2rem;
-            font-size: 1.5rem; /* Increased font size */
-            font-weight: 700; /* Use 700 for bold */
-            color: #3498db; /* Blue color for brand */
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: #3498db; 
         }
 
         #navbarNavDropdown .navbar-nav {
             margin-right: auto;
             margin-left: auto;
             display: flex;
-            gap: 1.5rem; /* Increased gap */
+            gap: 1.5rem; 
         }
 
         #navbarNavDropdown .nav-link {
-            padding: 0.75rem 1.5rem; /* Increased padding */
-            color: #555; /* Darker text */
-            font-weight: 500;  /* Medium font weight for nav links */
-            border-radius: 0.5rem; /* Rounded corners for nav links */
-            transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+            padding: 0.75rem 1.5rem;
+            color: #555; 
+            font-weight: 500;  
+            border-radius: 0.5rem; 
+            transition: color 0.3s ease, background-color 0.3s ease; 
         }
 
         #navbarNavDropdown .nav-link:hover,
         #navbarNavDropdown .nav-link.active {
-            color: #fff; /* White text on hover/active */
-            background-color: #3498db; /* Blue background on hover/active */
+            color: #fff; 
+            background-color: #3498db; 
         }
 
         #navbarNavDropdown .nav-link.active {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to active */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
         }
 
         .bg-info {
@@ -222,13 +222,13 @@
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     </script>
     <script>
-        // Auto-hide alerts
+        
         window.onload = () => {
             const alertList = document.querySelectorAll('.alert');
             alertList.forEach(alert => {
                 setTimeout(() => {
                     alert.remove();
-                }, 5000); // Remove after 5 seconds
+                }, 5000); 
             });
         };
     </script>

@@ -1,31 +1,26 @@
-# import json
 
-# # load tests from json file
-# with open("ChatbotWebsite/static/data/tests.json") as file:
-#     tests = json.load(file)
 import os
 import json
 
-# Get the directory of the current script (test.py)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Construct the absolute path to tests.json
+
 tests_file_path = os.path.join(current_dir, '..', 'static', 'data', 'tests.json')
 
 try:
     with open(tests_file_path) as file:
         tests = json.load(file)
-    print("Successfully loaded tests.json") # For debugging
-    # print(tests)
+    print("Successfully loaded tests.json") 
+   
 except FileNotFoundError:
     print(f"Error: Could not find tests.json at: {tests_file_path}")
-    # Handle the error appropriately
-    raise # Let the original error propagate for now
+   
+    raise 
 except json.JSONDecodeError as e:
     print(f"Error decoding tests.json: {e}")
     raise
 
-# get test questions
+#  test questions
 def get_questions(title):
     for test in tests["tests"]:
         if test["title"] == title:
@@ -33,7 +28,7 @@ def get_questions(title):
     return "Test not found"
 
 
-# get test score message
+#  test score message
 def get_test_messages(title, score):
     score = int(score)
     message = ""

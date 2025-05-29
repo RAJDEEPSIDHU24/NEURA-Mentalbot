@@ -1,12 +1,12 @@
 from flask import Blueprint, render_template, request, jsonify, url_for, flash, redirect
 from flask_login import current_user
 from ChatbotWebsite import db
-# from ChatbotWebsite.chatbot.chatbot import * # Remove or comment out the old chatbot import
 from ChatbotWebsite.chatbot.topic import *
 from ChatbotWebsite.chatbot.test import *
 from ChatbotWebsite.chatbot.mindfulness import *
 from ChatbotWebsite.models import ChatMessage
-from ChatbotWebsite.chatbot.cohere_chatbot import get_response  # Import the Cohere get_response
+from ChatbotWebsite.chatbot.cohere_chatbot import get_response  
+# Import the Cohere get_response
 
 chatbot = Blueprint("chatbot", __name__)
 

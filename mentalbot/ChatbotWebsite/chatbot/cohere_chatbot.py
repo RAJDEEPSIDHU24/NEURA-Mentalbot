@@ -1,11 +1,10 @@
 import cohere
 import os
- # to get the responses we used cohere intergrated into our chatbot 
- #there iis another merhod by simply writing all the replies annd user expected questions but that is not efficient and
- #didn't give expected results that's why we used cohere
-# Initialize the Cohere client with your API key from the environment variable
-co = cohere.Client(os.environ.get("COHERE_API_KEY"))
+ # to get the responses i used cohere intergrated into this chatbot 
 
+# SO i initialize the Cohere client with my API key from the environment variable 
+co = cohere.Client(os.environ.get("COHERE_API_KEY"))
+# cohere api key is needed  when we want to use its model or other ai services in our project 
 def get_response(message, conversation_history=None):
     try:
         prompt = message
@@ -14,6 +13,8 @@ def get_response(message, conversation_history=None):
 
         response = co.generate(
             model='command-light',  
+            # there are different models of cohere like command r, command r+ , embed  command light is flexible and cheaper version
+            #faster responses
             prompt=prompt,
             max_tokens=150,
             temperature=0.7,

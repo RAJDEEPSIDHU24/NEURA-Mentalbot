@@ -1,4 +1,24 @@
-**/__pycache__
-chatbot-model.h5
-data.pickle
-tfenv/
+# Python specific
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/  
+.vscode/ 
+
+# Environment variables 
+.env
+
+# Database files 
+*.sqlite3
+*.db
+
+# IDE specific (for IntelliJ IDEA users, which your screenshot showed)
+.idea/
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+
+Thumbs.db # Windows

@@ -22,11 +22,13 @@ def save_picture(form_picture):
     return picture_fn
 
 
-# function to send the reset password email
+# function to request the password reset
 def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message(
-        "Password Reset Request", sender="noreply@chatbot.com", recipients=[user.email]
+        "Password Reset Request",
+        sender=current_app.config['MAIL_USERNAME'],  
+        recipients=[user.email]
     )
     msg.body = f"""To reset your password, visit the following link:
 {url_for('users.reset_token', token=token, _external=True)}

@@ -1,44 +1,33 @@
-# Python-Mental-Health-Chatbot(Web-based)
 
+🧠 Neura – Web-Based Mental Health Chatbot
+Neura is a user-friendly, web-based mental health assistant designed to promote awareness and support around mental well-being. While it does not provide clinical diagnoses, MentalBot serves as an educational and self-help platform that allows users to explore various aspects of mental health in a private and interactive environment.
 
+🚀 Key Features
+User Authentication: Secure registration and login system with an option to continue as a guest for privacy.
 
-AIM: This is built to educate users with the correct knowledge of mental health and also provide some functions to improve mental health ***(NOT DIAGNOSIS)***.
+Conversational Support: Chat with an AI-driven bot trained to provide supportive and informative mental health guidance using the Cohere API.
 
+Topic-Based Conversations: Choose specific topics to gain focused information and advice.
 
+Mental Health Assessment: Take short, non-diagnostic mental health self-assessments to reflect on emotional wellness.
 
-## Languages/Components Used
+Mindfulness Exercises: Engage in guided practices to reduce stress and enhance emotional clarity.
 
-- Frontend: Python
-- Backend: Python
-- Database: MySQL
+Journaling: Maintain a personal journal to track thoughts, moods, and progress over time.
 
-## Installation
+Emergency SOS: Quick access to mental health hotlines (currently available for INDIA).
 
-```
- Configure your application in the `config.py` and database and make sure the database and URI are set up correctly
-```
-pip install -r requirements.txt
-```
+User Profile Management: Edit and manage personal profile information.
 
-```
-python run.py
-```
+🧑‍💻 Tech Stack
+Frontend & Backend: Python with Flask
 
-## Functions
-- Register, Login, and Continue as a Guest (For privacy reasons)
-- Chat with the chatbot
-- Select a specific topic
-- Conduct a mental health test
-- Mindfulness Exercises
-- Journalling for manual tracking
-- SOS Hotline (Only Malaysia)
-- Edit profile
+API : COHERE for automated responses 
 
-## Technical Domain
-- Create using Python
-- Flask for the Web
-- SQLAlchemy for Database
-- Bootstrap for the UI
-- TensorFlow and NLTK for the machine learning model
-- Other Library like Flask-login, Flask-bcrypt
--cohere api for the automated responses 
+Database: MySQL with SQLAlchemy ORM
+
+UI Framework: Bootstrap for responsive design
+
+Security: Flask-Login for session management, Flask-Bcrypt for password hashing
+
+AI Integration: Cohere API for intelligent, empathetic chatbot responses
